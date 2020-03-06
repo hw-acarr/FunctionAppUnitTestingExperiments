@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AzureFunctionsVersion>v2</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="TesterProject\LocalFunctionProjectTesting\**" />
+    <EmbeddedResource Remove="TesterProject\LocalFunctionProjectTesting\**" />
+    <None Remove="TesterProject\LocalFunctionProjectTesting\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventLog" Version="3.1.2" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.29" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HttpExample\bin\Debug\netcoreapp2.1\" />
+    <Folder Include="HttpExample\bin\Debug\netcoreapp3.1\bin\" />
+    <Folder Include="HttpExample\bin\Debug\netcoreapp3.1\Function1\" />
+    <Folder Include="HttpExample\obj\Debug\netcoreapp2.1\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\cs\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\de\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\es\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\fr\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\it\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\ja\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\ko\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\pl\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\pt-BR\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\ru\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\tr\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\zh-Hans\" />
+    <Folder Include="TesterProject\bin\Debug\netcoreapp3.1\zh-Hant\" />
+  </ItemGroup>
+</Project>
